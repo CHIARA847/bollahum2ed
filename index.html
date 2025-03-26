@@ -154,7 +154,7 @@
                     body: JSON.stringify({email, pref1, pref2, pref3})
                 })
                 .then(response => {
-                    resultDiv.textContent = response.message || "Grazie per il voto!";
+                    resultDiv.textContent = "Grazie per il voto!";
                     resultDiv.style.display = "block";
                     setTimeout(() => {
                         location.reload();
