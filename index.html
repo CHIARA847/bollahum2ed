@@ -134,6 +134,7 @@
             fetch("https://script.google.com/macros/s/AKfycbwqlw2R_IuWXCKqoub_dpmIZUpFEv8q1tJS3xAxfnBilKFeG1QNIep36s1tEg-ofPLL8g/exec", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
+                mode: "no-cors",
                 body: JSON.stringify({email, pref1, pref2, pref3})
             })
                 .then(response => response.json())
