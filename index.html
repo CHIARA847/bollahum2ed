@@ -126,20 +126,19 @@
         document.getElementById("vote-form").addEventListener("submit", (event) => {
             event.preventDefault();
 
-            let formData = new FormData();
-            formData.append("email", document.getElementById("email").value);
-            formData.append("pref1", document.getElementById("vote1").value);
-            formData.append("pref2", document.getElementById("vote2").value);
-            formData.append("pref3", document.getElementById("vote3").value);
+            let email = document.getElementById("email").value;
+            let pref1 = document.getElementById("vote1").value;
+            let pref2 = document.getElementById("vote2").value;
+            let pref3 = document.getElementById("vote3").value;
 
             fetch("https://script.google.com/macros/s/AKfycbwqlw2R_IuWXCKqoub_dpmIZUpFEv8q1tJS3xAxfnBilKFeG1QNIep36s1tEg-ofPLL8g/exec", {
                 method: "POST",
-                body: formData,
-                // mode: "no-cors"
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({email, pref1, pref2, pref3})
             })
                 .then(response => response.json())
                 .then(data => alert(data.message))
-                .catch(error => console.error("Errore:", error));
+                .catch(error => console.log("Errore:", error));
         });
 
         // Carica i media e mostra il primo
