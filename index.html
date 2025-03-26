@@ -134,7 +134,8 @@
 
             fetch("https://script.google.com/macros/s/AKfycbyOVaH2d-ifYFXuHri41hgiUT0bfI1YkqDc-PICUJ59h-pbCfA_gYFRWrU4Tj_ULU4BkQ/exec", {
                 method: "POST",
-                body: formData
+                body: formData,
+                mode: "no-cors"
             })
                 .then(response => response.json())
                 .then(data => alert(data.message))
