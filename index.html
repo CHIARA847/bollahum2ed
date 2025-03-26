@@ -132,10 +132,10 @@
             formData.append("pref2", document.getElementById("vote2").value);
             formData.append("pref3", document.getElementById("vote3").value);
 
-            fetch("https://script.google.com/macros/s/AKfycbyOVaH2d-ifYFXuHri41hgiUT0bfI1YkqDc-PICUJ59h-pbCfA_gYFRWrU4Tj_ULU4BkQ/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbwqlw2R_IuWXCKqoub_dpmIZUpFEv8q1tJS3xAxfnBilKFeG1QNIep36s1tEg-ofPLL8g/exec", {
                 method: "POST",
                 body: formData,
-                mode: "no-cors"
+                // mode: "no-cors"
             })
                 .then(response => response.json())
                 .then(data => alert(data.message))
