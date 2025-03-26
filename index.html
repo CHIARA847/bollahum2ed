@@ -137,8 +137,7 @@
                 mode: "no-cors",
                 body: JSON.stringify({email, pref1, pref2, pref3})
             })
-                .then(response => response.json())
-                .then(data => alert(data.message))
+                .then(response => console.log("Richiesta inviata, ma nessuna risposta ricevuta"))
                 .catch(error => console.log("Errore:", error));
         });
 
