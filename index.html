@@ -143,7 +143,7 @@
             try {
                 resultDiv.style.display = "none";
                 progressDiv.style.display = "block";
-                progressBar.style.width = "0%";
+                progressBar.style.width = "20%";
                 progressText.textContent = "Verifica email in corso...";
                 // Verifica esistenza email
                 const checkResponse = await fetch(`https://script.google.com/macros/s/AKfycbxo0EOLY0BXn3f8pMv1cTTrDdO5eTSrIEdrOQIJfSIco8bAtthbSQOtaJzsEWw7uN27iA/exec?email=${encodeURIComponent(email)}`, {
