@@ -8,15 +8,60 @@ body {
 .container {
     max-width: 600px;
     margin: 20px auto;
-    padding: 10px;
+    padding: 10px; /* Riduci il padding /
     background: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+}
+.container #logo{
+    position: relative;
+    max-width: 6000px;
+    margin: auto;
+    width: 100%;
 }
 h2 {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
+}
+#slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#slideshow-container img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+#slideshow-container iframe {
+    width: 100%;
+    height: 400px; / Altezza fissa per il video */
+    border-radius: 8px;
+}
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+#prev-btn {
+    left: 10px;
+}
+#next-btn {
+    right: 10px;
 }
 .voting-container {
     display: flex;
@@ -31,7 +76,7 @@ label {
     font-size: 14px;
     color: #333;
 }
-input[type="text"],
+input[type="number"],
 input[type="email"] {
     width: 80%;
     padding: 8px;
@@ -53,6 +98,50 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background: #6a4eb2;
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 10px;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: #ccc;
+}
+#result {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 #progress {
     display: none;
     margin-top: 20px;
@@ -68,28 +157,4 @@ button[type="submit"]:hover {
 #progress-text {
     color: #333;
     margin-top: 10px;
-}
-#result {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-#progress {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-}
-.progress-bar {
-    width: 0;
-    height: 5px;
-    background-color: #4CAF50;
-    transition: width 0.5s ease;
 }
