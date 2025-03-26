@@ -123,7 +123,7 @@
 
         // Controllo dei voti prima di inviare il form
 
-    document.getElementById("vote-form").addEventListener("submit", async (event) => {
+        document.getElementById("vote-form").addEventListener("submit", async (event) => {
             event.preventDefault();
             let email = document.getElementById("email").value;
             let pref1 = document.getElementById("vote1").value;
@@ -133,7 +133,7 @@
 
             try {
                 // Verifica esistenza email
-                const checkResponse = await fetch(`https://script.google.com/macros/s/AKfycbwqkKGGiOy2D6Dz8q9rpxue8FV8RBCW2rkijBsP3P1C-uSLPIqHiERFSgqiscHrcJHJbg/exec?email=${encodeURIComponent(email)}`, {
+                const checkResponse = await fetch(`https://script.google.com/macros/s/AKfycbwRNxurLtkMc1Baah1tw2oEaROaN53BcAmEZVh3U55yZVTIhgeOgv_hGXSrbRIGajiczQ/exec?email=${encodeURIComponent(email)}`, {
                     method: "GET"
                 });
 
@@ -149,7 +149,7 @@
                 }
 
                 // Invio dati
-                const postResponse = await fetch("https://script.google.com/macros/s/AKfycbwqkKGGiOy2D6Dz8q9rpxue8FV8RBCW2rkijBsP3P1C-uSLPIqHiERFSgqiscHrcJHJbg/exec", {
+                const postResponse = await fetch("https://script.google.com/macros/s/AKfycbwRNxurLtkMc1Baah1tw2oEaROaN53BcAmEZVh3U55yZVTIhgeOgv_hGXSrbRIGajiczQ/exec", {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify({email, pref1, pref2, pref3})
@@ -170,6 +170,7 @@
                 resultDiv.style.display = "block";
             }
         });
+
 
         // Carica i media e mostra il primo
         await loadMedia();
