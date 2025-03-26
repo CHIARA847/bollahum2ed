@@ -133,7 +133,7 @@
 
             try {
                 // Verifica esistenza email
-                const checkResponse = await fetch(`https://script.google.com/macros/s/AKfycbzZ5qM2Hic8QQJDEeHXgOQoqGCiw_Sm4wm8Y9qspR4h/dev?email=${encodeURIComponent(email)}`, {
+                const checkResponse = await fetch(`https://script.google.com/macros/s/AKfycbwqkKGGiOy2D6Dz8q9rpxue8FV8RBCW2rkijBsP3P1C-uSLPIqHiERFSgqiscHrcJHJbg/exec?email=${encodeURIComponent(email)}`, {
                     method: "GET"
                 });
 
@@ -149,7 +149,7 @@
                 }
 
                 // Invio dati
-                const postResponse = await fetch("https://script.google.com/macros/s/AKfycbzZ5qM2Hic8QQJDEeHXgOQoqGCiw_Sm4wm8Y9qspR4h/dev", {
+                const postResponse = await fetch("https://script.google.com/macros/s/AKfycbwqkKGGiOy2D6Dz8q9rpxue8FV8RBCW2rkijBsP3P1C-uSLPIqHiERFSgqiscHrcJHJbg/exec", {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify({email, pref1, pref2, pref3})
